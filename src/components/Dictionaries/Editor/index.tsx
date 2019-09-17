@@ -1,15 +1,17 @@
 import React from 'react'
 import { DictionaryRow } from '../../../types';
 import "./Editor.scss";
+import Badge from '../../shared/Badge';
 
 interface Props {
     dictionaryRows: DictionaryRow[];
     onSave(rows: DictionaryRow[]): void;
     onAdd(): void;
     onDelete(rowId: string): void;
+    onValidate(rows: DictionaryRow[]): void;
 }
 
-export const Editor = ({ dictionaryRows, onSave, onAdd, onDelete }: Props) => {
+export const Editor = ({ dictionaryRows, onSave, onAdd, onDelete, onValidate }: Props) => {
 
     const handleInputChange = (id: string, type: string) => (evt: { target: { value: any; }; }) => {
         const updatedRows = dictionaryRows.map((row) => {
@@ -22,6 +24,11 @@ export const Editor = ({ dictionaryRows, onSave, onAdd, onDelete }: Props) => {
     const handleSubmit = () => {
         onSave(dictionaryRows);
     };
+
+    const handleValidation = () => {
+        onValidate(dictionaryRows);
+    };
+
     return (
         <div>
             {dictionaryRows.map((row) => (
@@ -45,11 +52,17 @@ export const Editor = ({ dictionaryRows, onSave, onAdd, onDelete }: Props) => {
                     >
                         <i className="fa fa-minus" aria-hidden="true" />
                     </button>
+
+                    <span>{row.errors.length > 0 && row.errors.map(error => <Badge errorType={error} />)}
+                    </span>
                 </div>
 
             ))}
             <div className="editor-actions">
                 {dictionaryRows.length > 0 && <>
+                    <button onClick={handleValidation} className="btn btn-green">
+                        <i className="fa fa-exclamation-circle" aria-hidden="true" /> Validate
+                    </button>
                     <button onClick={handleSubmit} className="btn btn-green">
                         <i className="fa fa-file" aria-hidden="true" /> Save
                     </button>

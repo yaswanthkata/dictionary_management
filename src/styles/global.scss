@@ -39,6 +39,7 @@ button {
   font-size: 12.025px;
   font-weight: bold;
   white-space: nowrap;
+  margin-left: 3px;
   color: #ffffff;
   background-color: #999999;
   -webkit-border-radius: 2px;
@@ -46,20 +47,17 @@ button {
   border-radius: 2px;
 }
 .badge-forks {
-  background-color: #b94a48;
+  background-color: #333333;
 }
 
 .badge-chains {
   background-color: #f89406;
 }
 
-.badge-none {
-  background-color: #468847;
-}
 .badge-duplicates {
   background-color: #3a87ad;
 }
 
 .badge-cycles {
-  background-color: #333333;
+  background-color: #b94a48;
 }
