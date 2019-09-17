@@ -26,3 +26,40 @@ button {
     opacity: 0.3;
   }
 }
+.btn-green {
+  @include button-bg($light-green);
+}
+
+.btn-red {
+  @include button-bg($red);
+}
+
+.badge {
+  padding: 1px 9px 2px;
+  font-size: 12.025px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #999999;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.badge-forks {
+  background-color: #b94a48;
+}
+
+.badge-chains {
+  background-color: #f89406;
+}
+
+.badge-none {
+  background-color: #468847;
+}
+.badge-duplicates {
+  background-color: #3a87ad;
+}
+
+.badge-cycles {
+  background-color: #333333;
+}
