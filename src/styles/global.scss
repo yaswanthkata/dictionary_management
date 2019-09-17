@@ -1,0 +1,28 @@
+@import "variables.scss";
+@import "mixins.scss";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea {
+  padding: 12px;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.btn {
+  color:$white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  &:disabled {
+    opacity: 0.3;
+  }
+}

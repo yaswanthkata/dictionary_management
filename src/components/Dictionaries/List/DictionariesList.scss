@@ -1,0 +1,36 @@
+@import "../../../styles/variables";
+.dictionaries-list {
+    list-style-type: none;
+    height: 400px;
+    padding-top:10px; 
+    overflow: auto;
+    li {
+        padding: 10px;
+        overflow: auto;
+        img {
+          float: left;
+          margin: 0 15px 0 0;
+        }
+      }
+      
+      // li:hover {
+      //   background: $color-border-light;
+      //   cursor: pointer;
+      // }
+      li.selected {
+        background:$color-border-dark;
+      }
+      .title{
+          text-align: start;
+          padding: 10px;
+          button{
+            float: right;
+          }
+      }
+  }
+ 
+  @media screen and (max-width: 600px){
+    .dictionaries-list {
+      height: 200px;
+    }
+  }
